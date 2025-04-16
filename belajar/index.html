@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Sederhana</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-    header {
-      background: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #0056b3;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    main {
-      padding: 20px;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pribadi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Selamat Datang di Warung Waktu</h1>
-  </header>
+    <header>
+        <div class="container">
+            <h1>Nama Kamu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#projects">Proyek</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <nav>
-    <a href="#">Beranda</a>
-    <a href="#">Tentang</a>
-    <a href="#">Kontak</a>
-  </nav>
+    <section class="hero">
+        <div class="container">
+            <h2>Selamat Datang di Website Saya</h2>
+            <p>Saya seorang Web Developer yang suka membangun hal keren di internet.</p>
+            <a href="#projects" class="btn">Lihat Proyek</a>
+        </div>
+    </section>
 
-  <main>
-    <h2>Ini Judul Konten</h2>
-    <p> Buat Desain Nanti Duar</p>
-  </main>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <p>Halo! Saya [Nama Kamu], seorang pengembang web yang fokus pada front-end development. Saya suka membuat website yang cepat, responsif, dan menarik.</p>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Website Saya. Semua Hak Dilindungi.
-  </footer>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Proyek Saya</h2>
+            <div class="project-grid">
+                <div class="project-card">Proyek 1</div>
+                <div class="project-card">Proyek 2</div>
+                <div class="project-card">Proyek 3</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>Hubungi saya di <a href="mailto:emailkamu@email.com">emailkamu@email.com</a></p>
+            <p>&copy; 2025 Nama Kamu</p>
+        </div>
+    </footer>
 
 </body>
 </html>

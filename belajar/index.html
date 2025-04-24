@@ -3,55 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Pribadi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jasa Profesional Anda</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .container {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 300px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        .feature-box h3 {
+            color: #0077cc;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .cta a {
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .cta a:hover {
+            background-color: #005fa3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Nama Kamu</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#projects">Proyek</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Selamat Datang di Warung Waktu </h1>
+        <p>Solusi terbaik untuk kebutuhan jasa profesional Anda</p>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Selamat Datang di Website Saya</h2>
-            <p>Saya seorang Web Developer yang suka membangun hal keren di internet.</p>
-            <a href="#projects" class="btn">Lihat Proyek</a>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <p>Halo! Saya [Nama Kamu], seorang pengembang web yang fokus pada front-end development. Saya suka membuat website yang cepat, responsif, dan menarik.</p>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Proyek Saya</h2>
-            <div class="project-grid">
-                <div class="project-card">Proyek 1</div>
-                <div class="project-card">Proyek 2</div>
-                <div class="project-card">Proyek 3</div>
+    <div class="container">
+        <section>
+            <h2>Mengapa Memilih Kami?</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>Berpengalaman</h3>
+                    <p>Tim kami memiliki pengalaman lebih dari 5 tahun di bidang layanan profesional.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Harga Terjangkau</h3>
+                    <p>Kami menawarkan harga kompetitif tanpa mengorbankan kualitas layanan.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Layanan Cepat</h3>
+                    <p>Proses cepat dan responsif, kami mengutamakan kepuasan pelanggan.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="contact">
-        <div class="container">
-            <p>Hubungi saya di <a href="mailto:emailkamu@email.com">emailkamu@email.com</a></p>
-            <p>&copy; 2025 Nama Kamu</p>
+        <div class="cta">
+            <h2>Siap Bekerja Sama?</h2>
+            <p>Hubungi kami sekarang untuk konsultasi GRATIS!</p>
+            <a href="#kontak">Hubungi Kami</a>
         </div>
+    </div>
+
+    <footer>
+        &copy; 2025 hammam seng buat lekkkk.
     </footer>
 
 </body>

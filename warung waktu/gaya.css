@@ -53,7 +53,9 @@ header h1 {
 
 #ww:target, 
 #pesan:target, 
-#hubungi:target {
+#hubungi:target,
+#hubungi:target
+ {
     display:block;
 }
 

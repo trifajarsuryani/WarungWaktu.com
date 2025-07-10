@@ -50,46 +50,6 @@
 
 </div>
 
-<div id="jenis" class="content">
-    <h2>Jenis Jasa yang Kami Tawarkan</h2>
-    <ul>
-        <li onclick="tampil('antar')">Antar Jemput</li>
-        <li onclick="tampil('barang')">Nitip Barang</li>
-        <li onclick="tampil('makanan')">Nitip Makanan</li>
-    </ul>
-
-    <div id="antar" class="info">
-        <p>Layanan untuk mengantar dan menjemput Anda dari lokasi yang diinginkan.</p>
-        <img src="https://via.placeholder.com/400x200?text=Antar+Jemput" alt="Antar Jemput">
-    </div>
-
-    <div id="barang" class="info">
-        <p>Kami siap membantu mengantarkan barang dengan aman dan cepat.</p>
-        <img src="https://via.placeholder.com/400x200?text=Nitip+Barang" alt="Nitip Barang">
-    </div>
-
-    <div id="makanan" class="info">
-        <p>Ingin nitip makanan? Kami siap membelikan dan mengantar ke tempat Anda.</p>
-        <img src="https://via.placeholder.com/400x200?text=Nitip+Makanan" alt="Nitip Makanan">
-    </div>
-
-    <p><strong>Jam Operasional:</strong> Setiap Hari, Pukul 06.00 - 16.00</p>
-</div>
-
-<script>
-    function tampil(id) {
-        // Sembunyikan semua info
-        var semua = document.querySelectorAll('.info');
-        semua.forEach(function(el) {
-            el.style.display = 'none';
-        });
-
-        // Tampilkan yang dipilih
-        document.getElementById(id).style.display = 'block';
-    }
-</script>
-
-
 <div id="hubungi" class="content">
     <h2>HUBUNGI KAMI</h2>
         <p>Hubungi kami sekarang untuk konsultasi GRATIS!</p>

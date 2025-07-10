@@ -50,15 +50,84 @@
 
 </div>
 
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Jenis Jasa</title>
+    <style>
+        #jenis {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #0077cc;
+        }
+        li:hover {
+            text-decoration: underline;
+        }
+        .info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-left: 4px solid #0077cc;
+            border-radius: 5px;
+        }
+        .info img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
 <div id="jenis" class="content">
     <h2>Jenis Jasa yang Kami Tawarkan</h2>
     <ul>
-        <a href="antarjemput.html" target="_blank">Antar Jemput</a>
-        <a href="nitipbarang.html" target="_blank">Nitip Barang</a>
-       <a href="nitipmakanan.html" target="_blank">Nitip Makanan</a>
+        <li onclick="tampil('antar')">Antar Jemput</li>
+        <li onclick="tampil('barang')">Nitip Barang</li>
+        <li onclick="tampil('makanan')">Nitip Makanan</li>
     </ul>
+
+    <div id="antar" class="info">
+        <p>Layanan untuk mengantar dan menjemput Anda dari lokasi yang diinginkan.</p>
+        <img src="https://via.placeholder.com/400x200?text=Antar+Jemput" alt="Antar Jemput">
+    </div>
+
+    <div id="barang" class="info">
+        <p>Kami siap membantu mengantarkan barang dengan aman dan cepat.</p>
+        <img src="https://via.placeholder.com/400x200?text=Nitip+Barang" alt="Nitip Barang">
+    </div>
+
+    <div id="makanan" class="info">
+        <p>Ingin nitip makanan? Kami siap membelikan dan mengantar ke tempat Anda.</p>
+        <img src="https://via.placeholder.com/400x200?text=Nitip+Makanan" alt="Nitip Makanan">
+    </div>
+
     <p><strong>Jam Operasional:</strong> Setiap Hari, Pukul 06.00 - 16.00</p>
 </div>
+
+<script>
+    function tampil(id) {
+        // Sembunyikan semua info
+        var semua = document.querySelectorAll('.info');
+        semua.forEach(function(el) {
+            el.style.display = 'none';
+        });
+
+        // Tampilkan yang dipilih
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
 
 
 <div id="hubungi" class="content">

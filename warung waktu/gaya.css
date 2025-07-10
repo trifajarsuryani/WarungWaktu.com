@@ -70,30 +70,42 @@ footer {
     color: #777;
 }
 
-<style>
-    #jenis {
-        margin: 20px;
-        font-family: Arial, sans-serif;
-    }
-    h2 {
-        color: #333;
-    }
-    ul {
-        padding-left: 20px;
-    }
-    li {
-        margin-bottom: 10px;
-    }
-    a {
-        text-decoration: none;
-        color: #0077cc;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    p {
-        margin-top: 15px;
-        font-style: italic;
-    }
-</style>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenis Jasa</title>
+    <style>
+        #jenis {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #0077cc;
+        }
+        li:hover {
+            text-decoration: underline;
+        }
+        .info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-left: 4px solid #0077cc;
+            border-radius: 5px;
+        }
+        .info img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>

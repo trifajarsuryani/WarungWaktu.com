@@ -69,3 +69,31 @@ footer {
     margin-top: 20px;
     color: #777;
 }
+
+<style>
+    #jenis {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+    }
+    h2 {
+        color: #333;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: #0077cc;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    p {
+        margin-top: 15px;
+        font-style: italic;
+    }
+</style>
+

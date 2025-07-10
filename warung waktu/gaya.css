@@ -51,6 +51,11 @@ header h1 {
     margin: 0 auto;
 }
 
+.kotak {
+    background-color: #0077cc;
+    width: 100%;
+    text-align: center;
+}
 #ww:target, 
 #pesan:target, 
 #jenis:target,

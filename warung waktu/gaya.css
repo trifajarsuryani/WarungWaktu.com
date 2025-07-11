@@ -70,3 +70,19 @@ footer {
     color: #777;
 }
 
+.Pembayaran {
+    max-widht: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px deshed #2196F3;
+    border-radius: 15px
+    background-color: #f0f8ff;
+    text-alignz: left;
+    font-size: 16px;
+}
+
+.Pembayaran h3 {
+    color: #2196F3;
+    margin-botton: 10px;
+
+}

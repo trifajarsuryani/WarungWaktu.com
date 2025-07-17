@@ -1,4 +1,3 @@
-/* Animasi saat pertama kali load */
 @keyframes fadeInLoad {
     from {
         opacity: 0;

@@ -1,3 +1,19 @@
+/* Animasi saat pertama kali load */
+@keyframes fadeInLoad {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-load {
+    animation: fadeInLoad 1s ease-out;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,37 +24,36 @@ body {
 
 header {
     background-color: #0077cc;
-    width: 100%;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     margin-bottom: 30px;
+    color: white;
 }
 
 header h1 {
-    color: white;
-    padding: 10px 20px;
-    display: inline-block;
-    border-radius: 8px;
+    margin: 0;
+    font-size: 36px;
 }
 
 .menu {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .menu a {
     text-decoration: none;
-    background-color: #0077cc;
+    background-color: #0066cc;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .menu a:hover {
-    background-color: #02203e;
+    background-color: #004080;
 }
 
 .content {
@@ -51,38 +66,115 @@ header h1 {
     margin: 0 auto;
 }
 
-.kotak {
-    background-color: #0077cc;
-    width: 100%;
-    text-align: center;
-}
 #ww:target, 
 #pesan:target, 
-#jenis:target,
-#hubungi:target
- {
-    display:block;
+#jenis:target, 
+#pembayaran:target, 
+#hubungi:target {
+    display: block;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.payment-options button {
+    padding: 12px;
+    border: none;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.payment-options button:hover {
+    background-color: #005fa3;
+}
+
+.kotak {
+    background-color: #0077cc;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.kotak a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 footer {
     text-align: center;
-    margin-top: 20px;
+    margin: 30px 0;
     color: #777;
 }
 
-.Pembayaran {
-    max-widht: 500px;
-    margin: 20px auto;
-    padding: 15px;
-    border: 2px deshed #2196F3;
-    border-radius: 15px
-    background-color: #f0f8ff;
-    text-alignz: left;
-    font-size: 16px;
+/* === ANIMASI LOADING === */
+#loading-screen {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0077cc, #004080);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.6s ease;
 }
 
-.Pembayaran h3 {
-    color: #2196F3;
-    margin-botton: 10px;
+#loading-screen.fade-out {
+    opacity: 0;
+}
 
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    color: #0077cc;
+    font-weight: bold;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotateLogo 2s linear infinite;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.typing-text {
+    font-size: 18px;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 260px; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
 }

@@ -3,110 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warung Waktu</title>
+    <title>Warung Waktu - Jasa & Pembayaran</title>
     <link rel="stylesheet" href="gaya.css">
 </head>
-
 <body>
 
+<!-- Loading Screen -->
 <div id="loading-screen">
-  <div class="loader-content">
-    <div class="logo-circle">
-      <span>WW</span>
-    </div>
-    <div class="typing-text">Memuat Warung Waktu...</div>
-  </div>
+  <div class="spinner"></div>
+  <h2>Memuat Warung Waktu...</h2>
 </div>
 
+<!-- Header -->
 <header class="fade-in-load">
     <h1>WARUNG WAKTU</h1>
-    <p>Warung Jasa Profesional: Mitra Tepat untuk Hasil Maksimal dan Pelayanan Istimewa.</p>
+    <p>Solusi Jasa Harian Cepat, Aman, dan Terpercaya</p>
 </header>
 
+<!-- Navigation Menu -->
 <nav class="menu fade-in-load">
-    <a href="#ww">Warung Waktu</a>
-    <a href="#pesan">Daerah yang Kami Jangkau</a>
-    <a href="#jenis">Jenis Jasa yang Ditawarkan</a>
-    <a href="#pembayaran">Metode Pembayaran</a>
-    <a href="#hubungi">Hubungi Kami</a>
+    <a href="#jasa">Jasa</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#pembayaran">Pembayaran</a>
+    <a href="#hubungi">Kontak</a>
 </nav>
 
-<section id="ww" class="content">
-    <h2>Sejarah Kami</h2>
-    <p>Sejak zaman dahulu, manusia selalu membutuhkan bantuan satu sama lain...</p>
-    <p>Di Warung Waktu, kami memahami pentingnya jasa profesional berkualitas...</p>
+<!-- Jasa -->
+<section id="jasa" class="content">
+    <h2>Jasa Kami</h2>
+    <div class="service-grid">
+        <a class="service-card" href="anjem.html">
+            <h3>Antar Jemput</h3>
+            <p>Layanan antar jemput cepat dan efisien untuk kebutuhan harian Anda.</p>
+        </a>
+        <a class="service-card" href="jastipbr.html">
+            <h3>Titip Barang</h3>
+            <p>Titip barang tanpa khawatir dengan keamanan maksimal.</p>
+        </a>
+        <a class="service-card" href="jastipmkn.html">
+            <h3>Titip Makanan</h3>
+            <p>Lapar? Titip makanan favorit Anda, kami antar dengan cepat.</p>
+        </a>
+    </div>
 </section>
 
-<section id="pesan" class="content">
-    <h2>Lokasi Kami Ada di:</h2>
+<!-- Lokasi -->
+<section id="lokasi" class="content">
+    <h2>Lokasi Layanan</h2>
     <ul>
-        <li>Saambiroto</li><li>Kedung Mundu</li><li>Ketileng</li>
-        <li>Sendangmulyo</li><li>Sendangguwo</li><li>Meteseh</li>
-        <li>Tembalang</li><li>Pedurungan</li><li>Ketileng</li>
+        <li>Saambiroto</li>
+        <li>Kedung Mundu</li>
+        <li>Sendangmulyo</li>
+        <li>Meteseh</li>
+        <li>Tembalang</li>
     </ul>
-    <h3>Sementara kami hanya tersedia di Unimus Raya</h3>
-
-    <h2>Waktu Pelayanan:</h2>
-    <p><strong>Senin - Jumat:</strong> 06.00 - 16.00 WIB<br>
-       <strong>Sabtu:</strong> 06.00 - 12.00 WIB<br>
-       <strong>Minggu & Hari Libur:</strong> Tutup</p>
+    <p><strong>Jam Operasional:</strong><br>
+       Senin - Jumat: 06.00 - 16.00 WIB<br>
+       Sabtu: 06.00 - 12.00 WIB<br>
+       Minggu & Hari Libur: Tutup</p>
 </section>
 
-<section id="jenis" class="content">
-    <h2>Jenis Jasa yang Kami Tawarkan</h2>
-    <ul>
-        <li>Antar Jemput</li>
-        <li>Nitip Barang</li>
-        <li>Nitip Makanan</li>
-    </ul>
-<<<<<<< HEAD
-</section>
-
+<!-- Pembayaran -->
 <section id="pembayaran" class="content">
-=======
- </div>
-<div id="Pembayaran" class="content">
->>>>>>> bc3b28be6a8af93c5b56bd662e121397c7b8f9fb
     <h2>Metode Pembayaran</h2>
-    <p>Klik salah satu metode pembayaran untuk konfirmasi:</p>
+    <p>Pilih metode pembayaran Anda:</p>
     <div class="payment-options">
-        <button onclick="confirmPayment('Transfer Bank')">Transfer Bank (BCA, BRI, BNI, MANDIRI)</button>
+        <button onclick="confirmPayment('Transfer Bank')">Transfer Bank</button>
         <button onclick="confirmPayment('DANA')">DANA</button>
         <button onclick="confirmPayment('OVO')">OVO</button>
         <button onclick="confirmPayment('ShopeePay')">ShopeePay</button>
-        <button onclick="confirmPayment('COD')">Tunai Saat Pembayaran (COD)</button>
+        <button onclick="confirmPayment('COD')">COD</button>
     </div>
 </section>
 
+<!-- Kontak -->
 <section id="hubungi" class="content">
-    <h2>HUBUNGI KAMI</h2>
-    <p>Hubungi kami sekarang untuk konsultasi GRATIS!</p>
+    <h2>Hubungi Kami</h2>
     <div class="kotak">
-        <a href="https://wa.me/6287716277515" target="_blank">Hubungi Kami</a>
+        <a href="https://wa.me/6287716277515" target="_blank">Konsultasi via WhatsApp</a>
     </div>
 </section>
 
-<footer>&copy; 2025 Warung Waktu - Hak Cipta Dilindungi</footer>
+<footer>&copy; 2025 Warung Waktu. Semua Hak Dilindungi.</footer>
 
 <script>
-  window.addEventListener("load", function () {
+  window.addEventListener("load", () => {
     const loader = document.getElementById("loading-screen");
     loader.classList.add("fade-out");
     setTimeout(() => {
       loader.style.display = "none";
     }, 800);
   });
-</script>
 
-
-<script>
-    window.addEventListener("load", function () {
-        const loader = document.getElementById("loading-screen");
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
-    });
+  function confirmPayment(method) {
+    alert("Anda memilih metode pembayaran: " + method);
+  }
 </script>
 
 </body>

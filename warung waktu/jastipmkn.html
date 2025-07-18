@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Titip Makanan - Warung Waktu</title>
-  <link rel="stylesheet" href="gaya.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antar Jemput - Warung Waktu</title>
+  <link rel="stylesheet" href="gaya.css" />
 </head>
 <body>
+
 <header class="fade-in-load">
-    <h1>Titip Makanan</h1>
-    <p>Layanan pembelian dan pengantaran makanan cepat ke lokasi Anda.</p>
+  <h1>Antar Jemput</h1>
+  <p>Layanan antar jemput cepat dan efisien untuk kebutuhan harian Anda.</p>
 </header>
 
 <section class="content">
-    <h2>Detail Layanan</h2>
-    <p>Lapar? Titipkan pesanan Anda pada kami. Kami siap mengantar:</p>
-    <ul>
-        <li>Makanan rumahan</li>
-        <li>Makanan dari warung/UMKM</li>
-        <li>Minuman kekinian</li>
-    </ul>
-    <a href="cobain.html" class="kotak">← Kembali ke Beranda</a>
+  <p>
+    Layanan ini tersedia untuk antar jemput orang, barang, atau dokumen di area layanan Warung Waktu.
+  </p>
+  <div class="btn-area">
+    <button class="pesan-btn" onclick="openModal()">Pesan Sekarang</button>
+    <a href="index.html" class="pesan-btn secondary">Kembali ke Beranda</a>
+  </div>
 </section>
 
-<footer>&copy; 2025 Warung Waktu</footer>
+<div id="pesanModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+  <div class="modal-content">
+    <button class="close" aria-label="Tutup" onclick="closeModal()">&times;</button>
+    <h2 id="modalTitle">Konfirmasi Pemesanan</h2>
+    <form id="formPesan" onsubmit="submitForm(event)" novalidate>
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required autocomplete="name" />
+      <label for="nomor">Nomor WhatsApp:</label>
+      <input type="tel" id="nomor" name="nomor" required autocomplete="tel" pattern="[\d\s()+-]{7,}" placeholder="0812xxxxxxx" />
+      <label for="alamat">Alamat Penjemputan:</label>
+      <textarea id="alamat" name="alamat" rows="3" required></textarea>
+      <label for="pembayaran">Metode Pembayaran:</label>
+      <select id="pembayaran" name="pembayaran" required>
+        <option value="" disabled selected>-- Pilih Metode --</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="DANA">DANA</option>
+        <option value="OVO">OVO</option>
+        <option value="ShopeePay">ShopeePay</option>
+        <option value="COD">COD</option>
+      </select>
+      <button type="submit" class="pesan-btn">Konfirmasi</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p style="text-align:center; margin: 30px 0;">&copy; 2025 Warung Waktu</p>
+</footer>
+
+<script>
+  const modal = document.getElementById("pesanModal");
+  const form = document.getElementById("formPesan");
+
+  function openModal() {
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+    document.getElementById("nama").focus();
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    alert("Pesanan Anda berhasil dikonfirmasi! Kami akan segera menghubungi Anda.");
+    form.reset();
+    closeModal();
+  }
+
+  window.addEventListener("click", e => {
+    if (e.target === modal) closeModal();
+  });
+
+  window.addEventListener("keydown", e => {
+    if (e.key === "Escape" && modal.style.display === "block") closeModal();
+  });
+</script>
+
 </body>
 </html>

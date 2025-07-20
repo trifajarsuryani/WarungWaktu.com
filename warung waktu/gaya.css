@@ -192,3 +192,18 @@ header p { margin-top: 10px; font-size: 18px; }
   font-weight: bold;
   text-decoration: none;
 }
+.image-ti24.png {
+  overflow: hidden;         
+  border-radius: 8px;       
+}
+
+.image-ti24.png {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease; 
+}
+
+.image-ti24.png {
+  transform: scale(1.05);   
+}

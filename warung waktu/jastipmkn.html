@@ -64,19 +64,29 @@
   </div>
 
   <!-- Modal Form -->
-  <div id="formModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Formulir Titip Makanan</h2>
-      <form>
-        <input type="text" placeholder="Nama Lengkap" required />
-        <input type="text" placeholder="Lokasi Restoran / Warung" required />
-        <input type="text" placeholder="Alamat Pengantaran" required />
-        <textarea placeholder="Detail Pesanan Makanan" rows="4" required></textarea>
-        <button class="btn" type="submit">Kirim</button>
-      </form>
-    </div>
+<div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Formulir Titip Makanan</h2>
+    <form>
+      <input type="text" placeholder="Nama Lengkap" required />
+      <input type="text" placeholder="Lokasi Restoran / Warung" required />
+      <input type="text" placeholder="Alamat Pengantaran" required />
+      <input type="text" placeholder="Nomor HP" required />
+      <select required>
+        <option value="" disabled selected>Pilih Metode Pembayaran</option>
+        <option value="dana">DANA</option>
+        <option value="shopeepay">ShopeePay</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="tunai">Tunai</option>
+      </select>
+
+      <textarea placeholder="Detail Pesanan Makanan" rows="4" required></textarea>
+      <button class="btn" type="submit">Kirim</button>
+    </form>
   </div>
+</div>
+
 
   <script>
     function openModal() {

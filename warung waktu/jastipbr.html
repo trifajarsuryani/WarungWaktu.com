@@ -33,7 +33,7 @@
     <section class="section">
       <h2>Deskripsi Layanan</h2>
       <p>
-        Layanan antar jemput Warung Waktu siap mengantar kamu ke tempat tujuan. Driver ramah, tepat waktu, dan siap jemput di lokasi kamu.
+        Layanan titip barang Warung Waktu siap membantu mengantarkan barangmu dengan aman. Driver ramah, tepat waktu, dan siap ambil barang di lokasi kamu.
       </p>
     </section>    
 
@@ -65,8 +65,8 @@
 <div id="formModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
-    <h2>Formulir Titip Barang</h2>
-    <form id="barangForm">
+    <h2>Formulir Antar Jemput</h2>
+    <form id="foodForm">
       <input type="text" id="nama" placeholder="Nama Lengkap" required />
       <input type="text" id="lokasi" placeholder="Lokasi Pengambilan Barang" required />
       <input type="text" id="alamat" placeholder="Alamat Tujuan" required />
@@ -78,28 +78,16 @@
         <option value="Transfer Bank">Transfer Bank</option>
         <option value="Tunai">Tunai</option>
       </select>
-      <textarea id="detail" placeholder="Detail Barang Titipan" rows="4" required></textarea>
+      <textarea id="detail" placeholder="Detail Barang yang Diambil" rows="4" required></textarea>
       <button class="btn" type="submit">Kirim</button>
     </form>
   </div>
 </div>
 
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" class="modal">
-  <div class="modal-content">
-    <h2>Konfirmasi Pesanan</h2>
-    <p id="konfirmasiIsi"></p>
-    <div style="text-align: right; margin-top: 20px;">
-      <button class="btn" onclick="closeConfirmModal()">Batal</button>
-      <button class="btn" onclick="kirimKeWhatsApp()">Konfirmasi</button>
-    </div>
-  </div>
-</div>
-
 <script>
-  let pesanWA = "";
+  let waLinkFinal = "";
 
-  document.getElementById("barangForm").addEventListener("submit", function (e) {
+  document.getElementById("foodForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const nama = document.getElementById("nama").value;
@@ -109,46 +97,45 @@
     const metode = document.getElementById("metode").value;
     const detail = document.getElementById("detail").value;
 
-    pesanWA = `Halo, saya ingin melakukan titip barang dengan data berikut:\n\n` +
-              `Nama: ${nama}\n` +
-              `Lokasi Pengambilan: ${lokasi}\n` +
-              `Alamat Tujuan: ${alamat}\n` +
-              `Nomor HP: ${nohp}\n` +
-              `Metode Pembayaran: ${metode}\n` +
-              `Detail Barang: ${detail}`;
+    const pesan = `Halo, saya ingin melakukan titip makanan dengan data berikut:\n\n` +
+                  `Nama: ${nama}\n` +
+                  `Lokasi Pengambilan Barang: ${lokasi}\n` +
+                  `Alamat Tujuan: ${alamat}\n` +
+                  `Nomor HP: ${nohp}\n` +
+                  `Metode Pembayaran: ${metode}\n` +
+                  `Detail Lokasi: ${detail}`;
 
-    document.getElementById("konfirmasiIsi").innerText = pesanWA;
-    closeModal();
+    const encodedPesan = encodeURIComponent(pesan);
+    const nomorAdmin = "6287716277515";
+    waLinkFinal = `https://wa.me/${nomorAdmin}?text=${encodedPesan}`;
+
+    document.getElementById("konfirmasiPesan").innerText = pesan;
     document.getElementById("confirmModal").style.display = "block";
   });
 
-  function kirimKeWhatsApp() {
-    const encoded = encodeURIComponent(pesanWA);
-    const nomorAdmin = "6287716277515";
-    const link = `https://wa.me/${nomorAdmin}?text=${encoded}`;
-    window.open(link, "_blank");
-    closeConfirmModal();
+  function kirimWhatsApp() {
+    window.open(waLinkFinal, "_blank");
+    document.getElementById("confirmModal").style.display = "none";
+    closeModal(); // tutup form juga setelah kirim
   }
 
-  function closeModal() {
-    document.getElementById("formModal").style.display = "none";
+  function tutupKonfirmasi() {
+    document.getElementById("confirmModal").style.display = "none";
   }
 
   function openModal() {
     document.getElementById("formModal").style.display = "block";
   }
 
-  function closeConfirmModal() {
-    document.getElementById("confirmModal").style.display = "none";
+  function closeModal() {
+    document.getElementById("formModal").style.display = "none";
   }
 
-  // Tutup modal jika klik di luar
   window.onclick = function (event) {
-    if (event.target === document.getElementById("formModal")) {
+    if (event.target == document.getElementById("formModal")) {
       closeModal();
-    }
-    if (event.target === document.getElementById("confirmModal")) {
-      closeConfirmModal();
+    } else if (event.target == document.getElementById("confirmModal")) {
+      tutupKonfirmasi();
     }
   };
 </script>
@@ -178,6 +165,20 @@
       });
     }
   });
+</script>
+
+<div id="confirmModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Konfirmasi Pesanan</h3>
+    <p id="konfirmasiPesan"></p>
+    <div style="margin-top: 20px;">
+      <button onclick="kirimWhatsApp()" class="btn">Kirim Sekarang</button>
+      <button onclick="tutupKonfirmasi()" class="btn" style="background: #ccc; color: #000;">Batal</button>
+    </div>
+  </div>
+</div>
+
+
 </script>
 </body>
 </html>

@@ -33,7 +33,7 @@
     <section class="section">
       <h2>Deskripsi Layanan</h2>
       <p>
-        Layanan antar jemput Warung Waktu siap mengantar kamu ke tempat tujuan. Driver ramah, tepat waktu, dan siap jemput di lokasi kamu.
+        Layanan titip makanan Warung Waktu siap membelikan dan mengantarkan pesananmu. Cepat, aman, dan driver siap beli di lokasi yang kamu inginkan
       </p>
     </section>
 
@@ -63,44 +63,84 @@
     </footer>
   </div>
 
-  <!-- Modal Form -->
-<div id="formModal" class="modal">
+  <div id="formModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
-    <h2>Formulir Titip Makanan</h2>
-    <form>
-      <input type="text" placeholder="Nama Lengkap" required />
-      <input type="text" placeholder="Lokasi Restoran / Warung" required />
-      <input type="text" placeholder="Alamat Pengantaran" required />
-      <input type="text" placeholder="Nomor HP" required />
-      <select required>
+    <h2>Formulir Antar Jemput</h2>
+    <form id="foodForm">
+      <input type="text" id="nama" placeholder="Nama Lengkap" required />
+      <input type="text" id="lokasi" placeholder="Nama Restoran" required />
+      <input type="text" id="alamat" placeholder="Alamat Pengantaran" required />
+      <input type="text" id="nohp" placeholder="Nomor HP" required />
+      <select id="metode" required>
         <option value="" disabled selected>Pilih Metode Pembayaran</option>
-        <option value="dana">DANA</option>
-        <option value="shopeepay">ShopeePay</option>
-        <option value="transfer">Transfer Bank</option>
-        <option value="tunai">Tunai</option>
+        <option value="DANA">DANA</option>
+        <option value="ShopeePay">ShopeePay</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="Tunai">Tunai</option>
       </select>
-
-      <textarea placeholder="Detail Pesanan Makanan" rows="4" required></textarea>
+      <textarea id="detail" placeholder="Detail Lokasi Penjemputan" rows="4" required></textarea>
       <button class="btn" type="submit">Kirim</button>
     </form>
   </div>
 </div>
 
+<script>
+  let waLinkFinal = "";
 
-  <script>
-    function openModal() {
-      document.getElementById('formModal').style.display = 'block';
+  document.getElementById("foodForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const lokasi = document.getElementById("lokasi").value;
+    const alamat = document.getElementById("alamat").value;
+    const nohp = document.getElementById("nohp").value;
+    const metode = document.getElementById("metode").value;
+    const detail = document.getElementById("detail").value;
+
+    const pesan = `Halo, saya ingin melakukan titip makanan dengan data berikut:\n\n` +
+                  `Nama: ${nama}\n` +
+                  `Nama Restoran: ${lokasi}\n` +
+                  `Alamat Tujuan: ${alamat}\n` +
+                  `Nomor HP: ${nohp}\n` +
+                  `Metode Pembayaran: ${metode}\n` +
+                  `Detail Lokasi: ${detail}`;
+
+    const encodedPesan = encodeURIComponent(pesan);
+    const nomorAdmin = "6287716277515";
+    waLinkFinal = `https://wa.me/${nomorAdmin}?text=${encodedPesan}`;
+
+    document.getElementById("konfirmasiPesan").innerText = pesan;
+    document.getElementById("confirmModal").style.display = "block";
+  });
+
+  function kirimWhatsApp() {
+    window.open(waLinkFinal, "_blank");
+    document.getElementById("confirmModal").style.display = "none";
+    closeModal(); // tutup form juga setelah kirim
+  }
+
+  function tutupKonfirmasi() {
+    document.getElementById("confirmModal").style.display = "none";
+  }
+
+  function openModal() {
+    document.getElementById("formModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("formModal").style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target == document.getElementById("formModal")) {
+      closeModal();
+    } else if (event.target == document.getElementById("confirmModal")) {
+      tutupKonfirmasi();
     }
-    function closeModal() {
-      document.getElementById('formModal').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      if (event.target === document.getElementById('formModal')) {
-        closeModal();
-      }
-    }
-  </script>
+  };
+</script>
+
   <script>
   window.addEventListener("load", () => {
     const loader = document.getElementById("loading-screen");
@@ -127,6 +167,18 @@
     }
   });
 </script>
+
+<div id="confirmModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Konfirmasi Pesanan</h3>
+    <p id="konfirmasiPesan"></p>
+    <div style="margin-top: 20px;">
+      <button onclick="kirimWhatsApp()" class="btn">Kirim Sekarang</button>
+      <button onclick="tutupKonfirmasi()" class="btn" style="background: #ccc; color: #000;">Batal</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
